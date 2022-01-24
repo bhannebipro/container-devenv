@@ -18,12 +18,11 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io
 
-sudo usermod -aG docker $USER
 newgrp docker
+sudo usermod -aG docker $USER
 
-docker version
- 
 sudo service docker start 
 
+docker version
 echo "You will have to start dockerd each time you restart your wsl ubuntu distrib using "
 echo "  sudo service docker status || sudo service docker start"
